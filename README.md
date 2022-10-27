@@ -383,3 +383,6 @@ and the resulting plot is:
 <p align="left">
 <img src="/gfiles/eyx-plot.png" width="600px">
 </p>
+
+
+summary(glm(cbind(y, 3) ~ 1, family=quasibinomial))
