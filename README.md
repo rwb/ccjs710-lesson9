@@ -171,7 +171,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 > 
 ```
 
-* Next, we extract the parameter estimates form this model:
+* Next, we extract the parameter estimates from this model:
 
 ```R
 a <- coef(m2)[1]
@@ -383,6 +383,3 @@ and the resulting plot is:
 <p align="left">
 <img src="/gfiles/eyx-plot.png" width="600px">
 </p>
-
-
-summary(glm(cbind(y, 3) ~ 1, family=quasibinomial))
