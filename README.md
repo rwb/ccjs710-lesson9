@@ -383,3 +383,9 @@ and the resulting plot is:
 <p align="left">
 <img src="/gfiles/eyx-plot.png" width="600px">
 </p>
+
+### Problem Set (Due Monday 10/7/22)
+
+1. Use the 1980 North Carolina dataset to: (1) conduct exploratory data analysis looking at marginal distributions and bivariate relationships; (2) estimate a logistic regression model with main effects for age and sex (interpreting your results); (3) check to see whether the age effects vary between sex groups using plots, a likelihood ratio test, and derivative comparison (including an assessment of the sampling distribution of the difference between the male and female derivatives at age 22); and (4) confirm that you can estimate a model writing down your own likelihood function that is comparable to the model estimated by the glm() function.
+
+2. Use the df2.csv homework dataset to study the relationship between x and y where y is a bounded count variable whose values range from 0 to 8. Assess the model fit and interpret the relationship between x and y.
