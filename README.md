@@ -384,6 +384,85 @@ and the resulting plot is:
 <img src="/gfiles/eyx-plot.png" width="600px">
 </p>
 
+* Next, let's set xstar to be equal to the sample mean of x.
+
+```r
+xstar <- mean(df$x)
+xstar
+```
+
+* This is the result:
+
+```rout
+> xstar <- mean(df$x)
+> xstar
+[1] 0.01691782
+> 
+```
+
+* Now, let's calculate the expected value of pstar conditional on this particular value of xstar.
+
+```r
+pstar <- exp(a+b*xstar)/(1+exp(a+b*xstar))
+pstar
+```
+
+* Here is the output:
+
+```rout
+> pstar <- exp(a+b*xstar)/(1+exp(a+b*xstar))
+> pstar
+[1] 0.5048431
+> 
+```
+
+* Next, we estimate the expected value of y conditional on the xstar and pstar values we have used.
+
+```r
+p0  <- choose(12,0)*pstar^0*(1-pstar)^(12-0)
+p1  <- choose(12,1)*pstar^1*(1-pstar)^(12-1)
+p2  <- choose(12,2)*pstar^2*(1-pstar)^(12-2)
+p3  <- choose(12,3)*pstar^3*(1-pstar)^(12-3)
+p4  <- choose(12,4)*pstar^4*(1-pstar)^(12-4)
+p5  <- choose(12,5)*pstar^5*(1-pstar)^(12-5)
+p6  <- choose(12,6)*pstar^6*(1-pstar)^(12-6)
+p7  <- choose(12,7)*pstar^7*(1-pstar)^(12-7)
+p8  <- choose(12,8)*pstar^8*(1-pstar)^(12-8)
+p9  <- choose(12,9)*pstar^9*(1-pstar)^(12-9)
+p10 <- choose(12,10)*pstar^10*(1-pstar)^(12-10)
+p11 <- choose(12,11)*pstar^11*(1-pstar)^(12-11)
+p12 <- choose(12,12)*pstar^12*(1-pstar)^(12-12)
+eyx <- p0*0+p1*1+p2*2+p3*3+p4*4+p5*5+p6*6+
+       p7*7+p8*8+p9*9+p10*10+p11*11+p12*12
+eyx
+```
+
+and here is the output:
+
+```rout
+> p0  <- choose(12,0)*pstar^0*(1-pstar)^(12-0)
+> p1  <- choose(12,1)*pstar^1*(1-pstar)^(12-1)
+> p2  <- choose(12,2)*pstar^2*(1-pstar)^(12-2)
+> p3  <- choose(12,3)*pstar^3*(1-pstar)^(12-3)
+> p4  <- choose(12,4)*pstar^4*(1-pstar)^(12-4)
+> p5  <- choose(12,5)*pstar^5*(1-pstar)^(12-5)
+> p6  <- choose(12,6)*pstar^6*(1-pstar)^(12-6)
+> p7  <- choose(12,7)*pstar^7*(1-pstar)^(12-7)
+> p8  <- choose(12,8)*pstar^8*(1-pstar)^(12-8)
+> p9  <- choose(12,9)*pstar^9*(1-pstar)^(12-9)
+> p10 <- choose(12,10)*pstar^10*(1-pstar)^(12-10)
+> p11 <- choose(12,11)*pstar^11*(1-pstar)^(12-11)
+> p12 <- choose(12,12)*pstar^12*(1-pstar)^(12-12)
+> eyx <- p0*0+p1*1+p2*2+p3*3+p4*4+p5*5+p6*6+
++        p7*7+p8*8+p9*9+p10*10+p11*11+p12*12
+> eyx
+[1] 6.058117
+> 
+```
+
+* Now, as an exercise, let's calculate the eyx values when xstar is set to plus/minus 1sd from the sample mean.
+
+
 ### Problem Set (Due Monday 10/7/22)
 
 1. Use the 1980 North Carolina dataset to: (1) conduct exploratory data analysis looking at marginal distributions and bivariate relationships; (2) estimate a logistic regression model with main effects for age and sex (interpreting your results); (3) check to see whether the age effects vary between sex groups using plots, a likelihood ratio test, and derivative comparison (including an assessment of the sampling distribution of the difference between the male and female derivatives at age 22); and (4) confirm that you can estimate a model writing down your own likelihood function that is comparable to the model estimated by the glm() function.
