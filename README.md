@@ -463,7 +463,7 @@ and here is the output:
 * Now, as an exercise, let's calculate the eyx values when xstar is set to plus/minus 1sd from the sample mean.
 
 
-### Problem Set (Due Monday 10/7/22)
+### Problem Set (Due Monday 11/7/22)
 
 1. Use the 1980 North Carolina dataset to: (1) conduct exploratory data analysis looking at marginal distributions and bivariate relationships; (2) estimate a logistic regression model with main effects for age and sex (interpreting your results); (3) check to see whether the age effects vary between sex groups using plots, a likelihood ratio test, and derivative comparison (including an assessment of the sampling distribution of the difference between the male and female derivatives at age 22); and (4) confirm that you can estimate a model writing down your own likelihood function that is comparable to the model estimated by the glm() function.
 
